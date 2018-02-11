@@ -73,27 +73,26 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'py_perf.wsgi.application'
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': "tf_platform",
-        'USER': "root",
-        'PASSWORD': "root",
-        'HOST': "localhost",
-        'PORT': "3306",
-        'TEST_CHARSET': 'utf8',
-    }
-}
-
-# Database
-# https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': "tf_platform",
+#         'USER': "root",
+#         'PASSWORD': "root",
+#         'HOST': "localhost",
+#         'PORT': "3306",
+#         'TEST_CHARSET': 'utf8',
 #     }
 # }
 
+# Database
+# https://docs.djangoproject.com/en/1.9/ref/settings/#databases
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
@@ -153,12 +152,6 @@ CACHES = {
     }
 }
 
-SILKY_PYTHON_PROFILER = True
-SILKY_PYTHON_PROFILER_BINARY = True
-SILKY_PYTHON_PROFILER_RESULT_PATH = os.path.join(BASE_DIR, "profiles")
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -188,3 +181,9 @@ LOGGING = {
         },
     }
 }
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+SILKY_PYTHON_PROFILER = True
+SILKY_PYTHON_PROFILER_BINARY = True
+SILKY_PYTHON_PROFILER_RESULT_PATH = os.path.join(BASE_DIR, "profiles")

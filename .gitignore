@@ -2,7 +2,6 @@
 *.log
 *.pyc
 *.pyo
-*.sqlite?
 *.sw?
 .venv
 */.venv/*

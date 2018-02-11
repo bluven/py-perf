@@ -11,7 +11,6 @@ from rest_framework.decorators import list_route
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.response import Response
 from django.db.models import Q
-from django.views.decorators.cache import cache_page
 from silk.profiling.profiler import silk_profile
 
 from .serializers import UserSerializer, UserCreateSerializer
@@ -25,8 +24,7 @@ class UserViewSet(ModelViewSet):
     serializer_class = UserSerializer
     lookup_field = 'username'
 
-    # @cache_page(60 * 15)
-    # @silk_profile()
+    @silk_profile()
     def list(self, request, *args, **kwargs):
         print('*')
         return super(UserViewSet, self).list(request, *args, **kwargs)
